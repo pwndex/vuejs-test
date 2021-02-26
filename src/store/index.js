@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import api from '@/api';
+import { setItem, getItem } from '@/helpers/localStorage';
 
 Vue.use(Vuex);
 
@@ -35,7 +36,9 @@ export default new Vuex.Store({
         const { data } = await api.getPayments(params);
 
         if (Array.isArray(data)) {
+          setItem('paymentsData', data);
           commit('set', { data });
+          commit('set', { isCached: true });
         }
       } catch (e) {
         // eslint-disable-next-line no-alert
@@ -43,6 +46,10 @@ export default new Vuex.Store({
       } finally {
         commit('set', { isLoading: false });
       }
+    },
+    clear({ commit }) {
+      setItem('paymentsData', {});
+      commit('set', { isCached: false });
     },
   },
 });
