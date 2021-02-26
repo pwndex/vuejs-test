@@ -45,6 +45,18 @@ export default (params) => {
             amount: 7503.60,
             date: '2020-02-30',
           },
+          {
+            id: 8,
+            name: 'Jimmy Elephant',
+            amount: 7503.60,
+            date: '2020-02-30',
+          },
+          {
+            id: 9,
+            name: 'Jimmy Elephant',
+            amount: 7503.60,
+            date: '2020-02-30',
+          },
         ],
       });
     }, 1500);
