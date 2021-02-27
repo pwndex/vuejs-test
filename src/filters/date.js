@@ -1,5 +1,5 @@
 const formatedDate = (date) => {
-  return date.split('-').reverse().join('.');
+  return new Intl.DateTimeFormat('ru').format(new Date(date));
 };
 
 export default {
