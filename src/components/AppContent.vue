@@ -9,7 +9,7 @@
         <h4 class="alert-heading">Data was cached!</h4>
         <p>You can clear cache and load data again.</p>
         <hr/>
-        <button class="btn btn-sm btn-primary mr-auto" @click="clearCache">
+        <button class="btn btn-sm btn-primary mr-auto" @click="clear">
           Clear cache
         </button>
       </div>
@@ -71,9 +71,6 @@ export default {
       'load',
       'clear',
     ]),
-    clearCache() {
-      this.clear();
-    },
   },
 };
 </script>
